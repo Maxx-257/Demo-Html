@@ -1,0 +1,7 @@
+# Optional packages for the full deep-learning versions of Practicals 10-12.
+# The practical files contain safe offline fallbacks, so these are NOT required
+# for the scripts to complete successfully.
+torch>=2.3
+torchvision>=0.18
+tensorflow>=2.16
+tensorflow-datasets>=4.9

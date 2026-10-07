@@ -1,0 +1,27 @@
+USB Pendrive - Check and Remove Device Entry
+==============================================
+
+Run Command Prompt as Administrator.
+
+1. List disk devices:
+pnputil /enum-devices /class DiskDrive
+
+2. After unplugging the pendrive, run the same command again:
+pnputil /enum-devices /class DiskDrive
+
+The HP pendrive should show as:
+Status: Disconnected
+
+3. Remove the identified HP USB Flash Drive device entry:
+pnputil /remove-device "USBSTOR\Disk&Ven_HP&Prod_USB_Flash_Drive&Rev_PMAP\070D5764ED377D64&0"
+
+4. Verify that the device entry was removed:
+pnputil /enum-devices /class DiskDrive
+
+Optional - List all USB devices:
+pnputil /enum-devices /bus USB
+
+
+NOTE:
+This removes/uninstalls the specific Plug-and-Play device entry from Windows.
+It does not erase Windows event logs, setup logs, or other historical/audit records.
